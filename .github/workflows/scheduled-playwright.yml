@@ -30,7 +30,7 @@ jobs:
       - name: Generate Slack message from test results
         if: always()
         run: |
-          JOB_STATUS=${{ job.status }} node generate-slack-report.js
+          JOB_STATUS=${{ job.status }} node generate-slack-report.cjs
           echo "Generated Slack Summary:"
           cat slack-summary.txt
 
