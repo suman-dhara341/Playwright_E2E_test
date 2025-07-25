@@ -29,6 +29,6 @@ const configData: ConfigSchema = {
   },
 };
 
-const stage = (process.env.STAGE_NAME as StageName) || "local";
+const stage = (process.env.STAGE_NAME || process.env.VITE_STAGE_NAME as StageName) || "local";
 
 export const EnvConfigPlaywright = configData[stage];
