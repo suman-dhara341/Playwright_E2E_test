@@ -24,16 +24,18 @@ jobs:
       - name: Create .env file
         run: |
           echo "STAGE_NAME=local" >> .env
+          echo "VITE_STAGE_NAME=local" >> .env
           echo "TEST_USER_EMAIL=sumand3421@gmail.com" >> .env
           echo "TEST_USER_PASSWORD=Sum@n123" >> .env
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright Tests
-        run: npm run test:e2e
-        env:
-          STAGE_NAME: local
+      - name: Install start-server-and-test for CI reliability  
+        run: npm install --save-dev start-server-and-test
+
+      - name: Run Development Server and Playwright Tests
+        run: npx start-server-and-test "npm run dev" http://localhost:5173 "npx playwright test"
 
       - name: Send Slack Notification
         if: always()
