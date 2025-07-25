@@ -32,6 +32,10 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
   ],
-  // Only run login test for CI reliability
-  testMatch: process.env.CI ? "**/login.spec.ts" : "**/*.spec.ts",
+  // Progressive test coverage for CI reliability
+  testMatch: process.env.CI 
+    ? (process.env.CI_TEST_LEVEL === "full" 
+        ? "**/*.spec.ts" 
+        : "**/login.spec.ts")
+    : "**/*.spec.ts",
 });
