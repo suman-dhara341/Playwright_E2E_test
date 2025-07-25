@@ -1,85 +1,41 @@
-name: Playwright Tests
+name: Scheduled Playwright Tests
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  schedule:
+    - cron: "0 3,15 * * *" # 8:30 AM & 8:30 PM IST
   workflow_dispatch:
 
 jobs:
-  e2e-tests:
+  run-playwright-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📦 Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: ⚙️ Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📥 Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: 🌐 Install Playwright Browsers
+      - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: 🚀 Start Vite Frontend Server
-        run: |
-          npm run dev &
-          npx wait-on http://localhost:5173
+      - name: Run Playwright Tests
+        run: npx playwright test
 
-      - name: 🧪 Run Playwright Tests
-        env:
-          USER_URL: http://localhost:5173
-        run: npm run test:e2e
-
-      - name: 📤 Upload HTML Report
+      - name: Send Slack Notification
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: playwright-report/
-
-      - name: 📤 Upload JSON Result
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-json-report
-          path: test-results/results.json
-
-      # ✅ Slack Notification - Success
-      - name: ✅ Slack Notification (Success)
-        if: success()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_COLOR: good
-          SLACK_TITLE: ":white_check_mark: Playwright Tests Result: *success*"
-          SLACK_MESSAGE_FIELDS: |
-            Ref: ${{ github.ref }}
-            Event: ${{ github.event_name }}
-            Actions URL: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Scheduled Playwright Tests>
-            Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>
-            Workflow: ${{ github.workflow }}
-            Repo: ${{ github.repository }}
-            View Run Logs: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
-
-      # ❌ Slack Notification - Failure
-      - name: ❌ Slack Notification (Failure)
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_COLOR: danger
-          SLACK_TITLE: ":x: Playwright Tests Result: *failure*"
-          SLACK_MESSAGE_FIELDS: |
-            Ref: ${{ github.ref }}
-            Event: ${{ github.event_name }}
-            Actions URL: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Scheduled Playwright Tests>
-            Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>
-            Workflow: ${{ github.workflow }}
-            Repo: ${{ github.repository }}
-            View Run Logs: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
+          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+          SLACK_MESSAGE: |
+            *📣 Playwright Tests Result:* `${{ job.status }}`
+            🧪 *Workflow:* ${{ github.workflow }}
+            🔁 *Commit:* ${{ github.sha }}
+            📦 *Repo:* ${{ github.repository }}
+            🔗 <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
