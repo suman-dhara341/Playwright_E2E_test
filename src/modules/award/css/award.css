@@ -1,0 +1,9 @@
+.award_criteria p {
+  margin-bottom: 5px;
+  color: black;
+}
+.request_evidence{
+  min-height: 50px;
+  max-height: 200px;
+  overflow-y: auto;
+}

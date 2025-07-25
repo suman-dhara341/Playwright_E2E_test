@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@keyframes revealTrophy {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(150% at 50% 50%);
+    opacity: 1;
+  }
+}
+
+.clip-trophy {
+  animation: revealTrophy 1s ease-out forwards;
+}
+

@@ -1,0 +1,9 @@
+.custom-progressbar .CircularProgressbar-text {
+    dominant-baseline: middle;
+    text-anchor: middle;
+    transform: translate(0, 2px);
+    font-weight: 700; 
+  }
+  .ql-container{ height: 100px }
+  .ql-toolbar.ql-snow{ border-radius: 5px 5px 0px 0px }
+  .ql-container.ql-snow{ border-radius: 0px 0px 5px 5px }

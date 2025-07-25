@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="icon-awards" viewBox="0 0 19 19">
+    <path
+      d="M4.5 7.12533H3.375C2.87772 7.12533 2.40081 6.91681 2.04917 6.54564C1.69754 6.17448 1.5 5.67107 1.5 5.14616C1.5 4.62125 1.69754 4.11784 2.04917 3.74668C2.40081 3.37551 2.87772 3.16699 3.375 3.16699H4.5"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M13.5 7.12533H14.625C15.1223 7.12533 15.5992 6.91681 15.9508 6.54564C16.3025 6.17448 16.5 5.67107 16.5 5.14616C16.5 4.62125 16.3025 4.11784 15.9508 3.74668C15.5992 3.37551 15.1223 3.16699 14.625 3.16699H13.5"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M3 17.417H15"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M7.5 11.6055V13.458C7.5 13.8934 7.1475 14.2338 6.7725 14.4159C5.8875 14.8434 5.25 16.023 5.25 17.4163"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M10.5 11.6055V13.458C10.5 13.8934 10.8525 14.2338 11.2275 14.4159C12.1125 14.8434 12.75 16.023 12.75 17.4163"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M13.5 1.58301H4.5V7.12467C4.5 8.38445 4.97411 9.59263 5.81802 10.4834C6.66193 11.3742 7.80653 11.8747 9 11.8747C10.1935 11.8747 11.3381 11.3742 12.182 10.4834C13.0259 9.59263 13.5 8.38445 13.5 7.12467V1.58301Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-badges" viewBox="0 0 23 23">
+    <path
+      d="M14.8326 12.3535L16.2845 20.5243C16.3008 20.6205 16.2873 20.7194 16.2458 20.8077C16.2043 20.896 16.1369 20.9696 16.0525 21.0186C15.9681 21.0675 15.8708 21.0896 15.7735 21.0817C15.6763 21.0739 15.5837 21.0365 15.5082 20.9747L12.0774 18.3996C11.9118 18.2759 11.7106 18.209 11.5038 18.209C11.2971 18.209 11.0959 18.2759 10.9303 18.3996L7.4937 20.9737C7.4183 21.0355 7.32586 21.0728 7.22872 21.0806C7.13158 21.0885 7.03435 21.0665 6.95 21.0177C6.86566 20.9688 6.79822 20.8955 6.75667 20.8073C6.71512 20.7191 6.70144 20.6204 6.71745 20.5243L8.16837 12.3535"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M11.5 13.417C14.6756 13.417 17.25 10.8426 17.25 7.66699C17.25 4.49135 14.6756 1.91699 11.5 1.91699C8.32436 1.91699 5.75 4.49135 5.75 7.66699C5.75 10.8426 8.32436 13.417 11.5 13.417Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-recognition" viewBox="0 0 22 22">
+    <path
+      d="M10.0007 10.285C9.16732 9.16392 8.33398 8.25 8.33398 7.33333C8.33398 6.8471 8.50958 6.38079 8.82214 6.03697C9.1347 5.69315 9.55862 5.5 10.0007 5.5C10.4427 5.5 10.8666 5.69315 11.1792 6.03697C11.4917 6.38079 11.6673 6.8471 11.6673 7.33333C11.6673 8.25 10.8357 9.1685 9.99232 10.285"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M10 16.5003L12.1417 13.292"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M5.20312 8.26495C5.73939 7.41229 6.45551 6.71528 7.29017 6.23358C8.12483 5.75188 9.05318 5.49984 9.99574 5.49903C10.9383 5.49821 11.867 5.74866 12.7024 6.22892C13.5377 6.70919 14.2548 7.40497 14.7923 8.2567"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+
+    />
+    <path
+      d="M7.79297 13.3193L10.0013 10.2852"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M7.79148 13.3188C6.43982 11.2252 4.99982 9.36892 4.99982 6.41634C4.99982 5.20077 5.5266 4.03498 6.46428 3.17544C7.40197 2.31589 8.67373 1.83301 9.99982 1.83301C11.3259 1.83301 12.5977 2.31589 13.5354 3.17544C14.473 4.03498 14.9998 5.20077 14.9998 6.41634C14.9956 9.36801 13.5181 11.2151 12.1415 13.2913L15.1057 17.4411C15.1751 17.5384 15.226 17.6501 15.2552 17.7696C15.2843 17.889 15.2912 18.0138 15.2754 18.1362C15.2596 18.2587 15.2214 18.3764 15.1632 18.4822C15.1049 18.588 15.0278 18.6798 14.9365 18.7519L13.3582 19.9986C13.1807 20.1384 12.9605 20.1961 12.7449 20.1592C12.5292 20.1224 12.3353 19.9939 12.2048 19.8015L9.99982 16.4997L7.76732 19.7933C7.63648 19.987 7.44148 20.1161 7.22462 20.1527C7.00776 20.1892 6.78655 20.1302 6.60898 19.9885L5.05482 18.7483C4.96445 18.6761 4.88818 18.5847 4.83055 18.4796C4.77291 18.3744 4.73508 18.2575 4.7193 18.1359C4.70352 18.0143 4.71012 17.8905 4.73869 17.7718C4.76727 17.653 4.81724 17.5418 4.88565 17.4448L7.79148 13.3188Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-spotlight" viewBox="0 0 24 24">
+    <path d="M17.4167 2.625H4.58333C3.57081 2.625 2.75 3.4085 2.75 4.375V16.625C2.75 17.5915 3.57081 18.375 4.58333 18.375H17.4167C18.4292 18.375 19.25 17.5915 19.25 16.625V4.375C19.25 3.4085 18.4292 2.625 17.4167 2.625Z" stroke="#585DF9" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" fill="currentcolor "/>
+    <path d="M2.75 7.875H19.25" stroke="#585DF9" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" fill="currentcolor "/>
+    <path d="M8.25 18.375V7.875" stroke="#585DF9" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" fill="currentcolor "/>
+  </symbol>
+  <symbol id="icon-hierarchy" viewBox="0 0 19 19">
+    <path
+      d="M1.97849 13.3631C1.88446 13.3082 1.80277 13.2345 1.73851 13.1466C1.67426 13.0587 1.62882 12.9585 1.60504 12.8523C1.58127 12.746 1.57966 12.636 1.60033 12.5291C1.621 12.4222 1.66349 12.3207 1.72516 12.231L8.85016 1.92351C8.92311 1.81898 9.02023 1.73362 9.13325 1.67468C9.24627 1.61574 9.37186 1.58496 9.49932 1.58496C9.62679 1.58496 9.75237 1.61574 9.86539 1.67468C9.97842 1.73362 10.0755 1.81898 10.1485 1.92351L17.2735 12.2231C17.3365 12.3131 17.3801 12.4152 17.4015 12.5229C17.4229 12.6306 17.4216 12.7416 17.3978 12.8489C17.3739 12.9561 17.3281 13.0572 17.2631 13.1457C17.198 13.2342 17.1153 13.3083 17.0202 13.3631L10.2831 17.2106C10.0443 17.3466 9.77416 17.4182 9.49932 17.4182C9.22448 17.4182 8.95438 17.3466 8.71557 17.2106L1.97849 13.3631Z"
+      stroke="#73737D"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M9.5 1.58301V17.4163"
+      stroke="#73737D"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-journey" viewBox="0 0 20 22">
+    <path
+      d="M10.0013 6.41634C11.1519 6.41634 12.0846 5.39033 12.0846 4.12467C12.0846 2.85902 11.1519 1.83301 10.0013 1.83301C8.85071 1.83301 7.91797 2.85902 7.91797 4.12467C7.91797 5.39033 8.85071 6.41634 10.0013 6.41634Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M8.5 5.77539L5.25 9.35039"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M3.7513 13.2913C4.9019 13.2913 5.83464 12.2653 5.83464 10.9997C5.83464 9.73402 4.9019 8.70801 3.7513 8.70801C2.60071 8.70801 1.66797 9.73402 1.66797 10.9997C1.66797 12.2653 2.60071 13.2913 3.7513 13.2913Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M5.83203 11H14.1654"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M16.2513 13.2913C17.4019 13.2913 18.3346 12.2653 18.3346 10.9997C18.3346 9.73402 17.4019 8.70801 16.2513 8.70801C15.1007 8.70801 14.168 9.73402 14.168 10.9997C14.168 12.2653 15.1007 13.2913 16.2513 13.2913Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M11.5 16.2254L14.75 12.6504"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M10.0013 20.1663C11.1519 20.1663 12.0846 19.1403 12.0846 17.8747C12.0846 16.609 11.1519 15.583 10.0013 15.583C8.85071 15.583 7.91797 16.609 7.91797 17.8747C7.91797 19.1403 8.85071 20.1663 10.0013 20.1663Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-insights" viewBox="0 0 22 22">
+    <path
+      d="M3.66536 18.3333H18.332C18.8183 18.3333 19.2846 18.1402 19.6284 17.7964C19.9722 17.4525 20.1654 16.9862 20.1654 16.5V7.33333C20.1654 6.8471 19.9722 6.38079 19.6284 6.03697C19.2846 5.69315 18.8183 5.5 18.332 5.5H11.0629C10.7609 5.49844 10.464 5.42231 10.1985 5.27839C9.93308 5.13446 9.70728 4.92719 9.5412 4.675L8.78953 3.575C8.62345 3.32281 8.39765 3.11554 8.13219 2.97161C7.86673 2.82769 7.56983 2.75156 7.26786 2.75H3.66536C3.17913 2.75 2.71282 2.94315 2.369 3.28697C2.02519 3.63079 1.83203 4.0971 1.83203 4.58333V16.5C1.83203 17.5083 2.65703 18.3333 3.66536 18.3333Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M7.33203 9.16699V12.8337"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M11 9.16699V11.0003"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M14.668 9.16699V14.667"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+  <symbol id="icon-pulse" viewBox="0 0 21 21">
+    <path
+      d="M16.625 2.375H4.375C3.4085 2.375 2.625 3.08388 2.625 3.95833V15.0417C2.625 15.9161 3.4085 16.625 4.375 16.625H16.625C17.5915 16.625 18.375 15.9161 18.375 15.0417V3.95833C18.375 3.08388 17.5915 2.375 16.625 2.375Z"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+    <path
+      d="M14.875 9.50033H13.125L11.375 13.4587L9.625 5.54199L7.875 9.50033H6.125"
+      stroke="#73737D"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="currentcolor "
+    />
+  </symbol>
+</svg>
