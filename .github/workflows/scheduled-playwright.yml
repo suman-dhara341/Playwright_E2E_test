@@ -50,30 +50,36 @@ jobs:
           name: playwright-json-report
           path: test-results/results.json
 
+      # ✅ SUCCESS SLACK MESSAGE
       - name: ✅ Slack Notification (Success)
         if: success()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: good
-          SLACK_TITLE: ":white_check_mark: Playwright Tests Passed"
-          SLACK_MESSAGE: |
-            :trophy: *Playwright Tests Result:* `success`
-            :test_tube: *Workflow:* ${{ github.workflow }}
-            :repeat: *Commit:* `${{ github.sha }}`
-            :package: *Repo:* ${{ github.repository }}
-            :link: *Actions URL:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SLACK_TITLE: ":loudspeaker: Playwright Tests Result: *success*"
+          SLACK_MESSAGE_FIELDS: |
+            Ref: ${{ github.ref }}
+            Event: ${{ github.event_name }}
+            Actions URL: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Scheduled Playwright Tests>
+            Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>
+            Workflow: ${{ github.workflow }}
+            Repo: ${{ github.repository }}
+            View Run Logs: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
 
+      # ❌ FAILURE SLACK MESSAGE
       - name: ❌ Slack Notification (Failure)
         if: failure()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: danger
-          SLACK_TITLE: ":x: Playwright Tests Failed"
-          SLACK_MESSAGE: |
-            :bangbang: *Playwright Tests Result:* `failure`
-            :test_tube: *Workflow:* ${{ github.workflow }}
-            :repeat: *Commit:* `${{ github.sha }}`
-            :package: *Repo:* ${{ github.repository }}
-            :link: *Actions URL:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SLACK_TITLE: ":loudspeaker: Playwright Tests Result: *failure*"
+          SLACK_MESSAGE_FIELDS: |
+            Ref: ${{ github.ref }}
+            Event: ${{ github.event_name }}
+            Actions URL: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Scheduled Playwright Tests>
+            Commit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>
+            Workflow: ${{ github.workflow }}
+            Repo: ${{ github.repository }}
+            View Run Logs: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
