@@ -1,0 +1,157 @@
+# Page snapshot
+
+```yaml
+- link "logo":
+  - /url: /feed
+  - img "logo"
+- button:
+  - img
+- img
+- textbox "Search..."
+- button "Employee":
+  - img
+  - text: Employee
+  - img
+- link "Feed":
+  - /url: /feed
+  - img
+  - paragraph: Feed
+- link "Spotlight":
+  - /url: /profile
+  - img
+  - paragraph: Spotlight
+- img
+- text: "1"
+- paragraph: Notification
+- img "Sanjoy"
+- paragraph: Update Employee details
+- button "✕"
+- img "Sanjoy"
+- button:
+  - img
+- button "Basic Details"
+- button "Security"
+- text: Primary Phone
+- paragraph: "Character Limit: Max 10 characters"
+- textbox: "1234567890"
+- text: About You
+- paragraph: "Character Limit: Max 200 characters"
+- textbox: hi
+- button "Update"
+- img "Sanjoy"
+- paragraph: Sanjoy Dikshit
+- paragraph: hi
+- img
+- paragraph: sumand3421@gmail.com
+- img
+- paragraph: "1234567890"
+- paragraph: Awards
+- img "Innovation Champion"
+- img "Matric Award"
+- img "I use WAZO"
+- paragraph: Badges
+- img "Onboarded"
+- img "Creative Genius"
+- img "Change Champion"
+- img "Change Champion"
+- paragraph: Recognition
+- text: "2"
+- img "Srijan"
+- text: P
+- paragraph: Reports To
+- paragraph: Srijan Das
+- img "Sanjoy"
+- textbox "Give a recognition to celebrate someone’s great work..."
+- img
+- img
+- paragraph: "Sort by:"
+- combobox:
+  - option "Not Selected" [disabled]
+  - option "All Feed" [selected]
+  - option "All Recognition"
+  - option "My Recognition"
+- text: S
+- paragraph: SK Pal
+- paragraph: achieved a milestone
+- paragraph: 1d ago
+- img
+- img
+- paragraph: 1-Year Milestone
+- paragraph: Celebrating one year of commitment and hard work.
+- img "1-Year Milestone badge"
+- button:
+  - img
+- button "11 Likes"
+- button:
+  - img
+- button "29 Comments"
+- img "Profile Image"
+- textbox "Add a comment..."
+- img
+- button [disabled]:
+  - img
+- text: S
+- paragraph: Souvik Roy
+- paragraph: received recognition
+- paragraph: from
+- paragraph: Sanjoy Dikshit
+- paragraph: 53m ago
+- img
+- paragraph: Best Quality
+- img
+- paragraph: Best Quality
+- paragraph: Maintains and promotes highest standards of excellence.
+- img "Best Quality badge"
+- button:
+  - img
+- button "Likes" [disabled]
+- img "Profile Image"
+- textbox "Add a comment..."
+- img
+- button [disabled]:
+  - img
+- text: S
+- paragraph: Souvik Roy
+- paragraph: received recognition
+- paragraph: from
+- paragraph: Sanjoy Dikshit
+- paragraph: 2h ago
+- img
+- paragraph: Best Quality
+- img
+- paragraph: Best Quality
+- paragraph: Maintains and promotes highest standards of excellence.
+- img "Best Quality badge"
+- button:
+  - img
+- button "Likes" [disabled]
+- img "Profile Image"
+- textbox "Add a comment..."
+- img
+- button [disabled]:
+  - img
+- paragraph: Activity
+- paragraph: View all
+- list:
+  - listitem:
+    - text: S
+    - img
+    - paragraph: You gave a recognition to Souvik Roy
+    - paragraph: 52m ago
+  - listitem:
+    - text: S
+    - img
+    - paragraph: You commented on SK Pal feed.
+    - paragraph: 53m ago
+  - listitem:
+    - text: S
+    - img
+    - paragraph: You gave a recognition to Souvik Roy
+    - paragraph: 2h ago
+- paragraph: Your upcoming goals
+- paragraph: View all
+- paragraph: One task
+- paragraph: Aug 31, 2025
+- paragraph: Growth starts beyond the comfort zone and with action.
+- button "Start a Growth Conversation"
+```

@@ -1,0 +1,198 @@
+# Page snapshot
+
+```yaml
+- link "logo":
+  - /url: /feed
+  - img "logo"
+- button:
+  - img
+- img
+- textbox "Search..."
+- button "Employee":
+  - img
+  - text: Employee
+  - img
+- link "Feed":
+  - /url: /feed
+  - img
+  - paragraph: Feed
+- link "Spotlight":
+  - /url: /profile
+  - img
+  - paragraph: Spotlight
+- img
+- text: "1"
+- paragraph: Notification
+- img "Sanjoy"
+- paragraph: Update Employee details
+- button "✕"
+- img "Sanjoy"
+- button:
+  - img
+- button "Basic Details"
+- button "Security"
+- text: Primary Phone
+- paragraph: "Character Limit: Max 10 characters"
+- textbox: "1234567890"
+- text: About You
+- paragraph: "Character Limit: Max 200 characters"
+- textbox: hi
+- button "Update"
+- heading "Awards" [level=1]
+- link "Learn more about Awards":
+  - /url: https://www.wazopulse.com/award
+  - paragraph: Info
+- img
+- searchbox "Search Awards..."
+- button "All Awards":
+  - text: All Awards
+  - img
+- button "Create Award":
+  - text: Create Award
+  - img
+- link "Award Vault":
+  - /url: /awards/award-vault
+  - button "Award Vault":
+    - text: Award Vault
+    - img
+- img
+- text: 0 Winners
+- img "ff32e0e3-ad04-4d8a-98a3-34b46dbe6b68"
+- paragraph: Client Delight Specialist
+- paragraph: For the reliable protectors who ensure c...
+- img
+- text: 0 Winners
+- img "fdf02543-7a13-45f5-8b75-b806034c00fe"
+- paragraph: Documentation Steward
+- paragraph: For those who consistently maintain and ...
+- img
+- text: 1 Winners
+- img "fc5facb9-e81a-4250-9069-046a4f7e24a8"
+- paragraph: The MVP
+- paragraph: The MVP
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "fb6d859b-2db5-4628-87d1-789999acb99e"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- text: 4 Winners
+- img "fb56bb86-8b35-46dd-b263-123e13217275"
+- paragraph: Innovation Champion
+- paragraph: Honors an individual who introduced a ne...
+- img
+- text: 0 Winners
+- img "fa0449e7-dcc3-41fb-b8f8-dcd0827ac189"
+- paragraph: Culture Champion
+- paragraph: For employees who actively uphold and pr...
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "f929dbb0-c643-4664-a662-3547da4370ad"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- paragraph: New
+- img
+- text: 1 Winners
+- img "f71a0c94-e2f5-4f6a-9129-b9c763d4e5a7"
+- paragraph: Rum Matric Award
+- paragraph: This is for test only
+- img
+- text: 0 Winners
+- img "f5da6f0e-afe5-4839-8aca-a21ef425a93b"
+- paragraph: The WoW Machine Award
+- paragraph: The WoW Machine Award
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "f5cba437-628b-4b72-93a2-d8b2e7fff896"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "f35380fb-885b-4461-922f-5edc8c3050c2"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- text: 0 Winners
+- img "f308b812-5647-47e8-aa7e-01f0e2c1abd5"
+- paragraph: Brand Enthusiast
+- paragraph: For employees who proudly carry the bran...
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "ef36c50f-b08e-4dcd-9875-cd001b3fe0b4"
+- paragraph: Employee of the Month
+- paragraph: Awarded for outstanding performance.
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "ed93d3fd-74da-4a24-8c05-fbc4f2498fdf"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- text: 4 Winners
+- img "ec8428e7-2deb-4e1c-a500-ad9ae91ed755"
+- paragraph: Employee of the month
+- paragraph: Given to the Employee who has performed ...
+- img
+- text: 0 Winners
+- img "ec288cf1-0399-47e5-b259-19d6f9a355fd"
+- paragraph: Quality Champion Award
+- paragraph: Quality Champion Award
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "eb962c7b-5c9d-4b0c-bed0-c36e96208fe5"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- text: 0 Winners
+- img "eb147cea-cdde-4f51-9264-bd3354fcc414"
+- paragraph: Highest of High Fives
+- paragraph: Highest of High Fives
+- img
+- text: 0 Winners
+- img "e74396dd-23e9-49bc-b841-05dfdcce3640"
+- paragraph: Exceeding Expectations Award
+- paragraph: Exceeding Expectations Award
+- img
+- text: 0 Winners
+- img "e5851bda-5d08-4af0-843c-66afac5a6a62"
+- paragraph: Documentation Steward
+- paragraph: For those who consistently maintain and ...
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "e35e273a-2515-4c01-8675-945dd114c3f2"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- paragraph: New
+- img
+- text: 0 Winners
+- img "e09acd71-3edb-4cef-a1f0-39106c706055"
+- paragraph: Award for Excellence
+- paragraph: Awarded for outstanding performance.
+- img
+- text: 18 Winners
+- img "default-a19cb358-d788-4166-8732-565852821cde"
+- paragraph: I use WAZO
+- paragraph: This award is given to everyone who uses...
+- img
+- text: 0 Winners
+- img "dd9d2d05-842f-4608-ae97-3e65585685ee"
+- paragraph: Client Delight Specialist
+- paragraph: For the reliable protectors who ensure c...
+```
