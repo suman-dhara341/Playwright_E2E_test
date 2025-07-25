@@ -1,3 +1,5 @@
+// tests/config/envConfig.ts
+
 type StageName = "local" | "alpha" | "prod";
 
 type ConfigSchema = Record<
@@ -27,5 +29,6 @@ const configData: ConfigSchema = {
   },
 };
 
-export const EnvConfig =
-  configData[import.meta.env.VITE_STAGE_NAME as StageName];
+const stage = (process.env.STAGE_NAME as StageName) || "local";
+
+export const EnvConfigPlaywright = configData[stage];

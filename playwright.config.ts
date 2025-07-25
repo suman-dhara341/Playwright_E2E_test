@@ -1,14 +1,14 @@
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
 
-// ✅ Load .env before using any config that depends on env vars
 dotenv.config();
 
-import { EnvConfig } from "./src/config/config";
+import { EnvConfigPlaywright } from "./tests/envConfig";
 
-// ✅ Sanity check
-if (!EnvConfig?.userUrl) {
-  console.warn("⚠️ WARNING: EnvConfig.userUrl is not defined!");
+if (!EnvConfigPlaywright?.userUrl) {
+  console.warn(
+    "⚠️ WARNING: EnvConfig.userUrl is not defined! Did you set STAGE_NAME or .env?"
+  );
 }
 
 export default defineConfig({
@@ -17,7 +17,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"], ["json", { outputFile: "test-results/results.json" }]],
   use: {
-    baseURL: EnvConfig.userUrl,
+    baseURL: EnvConfigPlaywright.userUrl,
     headless: true,
     screenshot: "only-on-failure",
     video: "retain-on-failure",
