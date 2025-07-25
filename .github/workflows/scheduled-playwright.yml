@@ -24,15 +24,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Start Application Server
-        run: npm run dev &
-        # Optionally add environment variables for your app
+      - name: Install start-server-and-test (for reliability)
+        run: npm install --save-dev start-server-and-test
 
-      - name: Wait for Application Server
-        run: npx wait-on http://localhost:5173
-
-      - name: Run Playwright Tests
-        run: npx playwright test
+      # This replaces separate Start/Wait/Run steps with one reliable combined command:
+      - name: Run App Server & Playwright Tests
+        run: npx start-server-and-test dev http://localhost:5173 npx playwright test
 
       - name: Send Slack Notification
         if: always()
