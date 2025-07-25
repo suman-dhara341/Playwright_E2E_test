@@ -38,26 +38,26 @@ jobs:
 
       - name: 📤 Upload HTML Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
 
       - name: 📤 Upload JSON Result
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-json-report
           path: test-results/results.json
 
-      # ✅ SUCCESS SLACK MESSAGE
+      # ✅ Slack Notification - Success
       - name: ✅ Slack Notification (Success)
         if: success()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: good
-          SLACK_TITLE: ":loudspeaker: Playwright Tests Result: *success*"
+          SLACK_TITLE: ":white_check_mark: Playwright Tests Result: *success*"
           SLACK_MESSAGE_FIELDS: |
             Ref: ${{ github.ref }}
             Event: ${{ github.event_name }}
@@ -67,14 +67,14 @@ jobs:
             Repo: ${{ github.repository }}
             View Run Logs: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
 
-      # ❌ FAILURE SLACK MESSAGE
+      # ❌ Slack Notification - Failure
       - name: ❌ Slack Notification (Failure)
         if: failure()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: danger
-          SLACK_TITLE: ":loudspeaker: Playwright Tests Result: *failure*"
+          SLACK_TITLE: ":x: Playwright Tests Result: *failure*"
           SLACK_MESSAGE_FIELDS: |
             Ref: ${{ github.ref }}
             Event: ${{ github.event_name }}
