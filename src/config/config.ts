@@ -1,12 +1,16 @@
 // src/config/config.ts
 
-// Load environment variables for Node.js contexts (including Playwright)
+// ✅ Load dotenv only in Node.js (not Vite/browser)
 if (typeof process !== "undefined" && typeof window === "undefined") {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    require("dotenv").config();
+    // Load only if not already loaded (useful for CI)
+    if (!process.env.VITE_STAGE_NAME) {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      require("dotenv").config();
+      console.log("✅ dotenv loaded");
+    }
   } catch (e) {
-    console.warn("dotenv not loaded (probably not in Node)");
+    console.warn("⚠️ dotenv not loaded (likely outside Node.js)");
   }
 }
 
@@ -24,7 +28,7 @@ type ConfigSchema = Record<
 const configData: ConfigSchema = {
   local: {
     apiUrl: "https://ln2npaai4i.execute-api.us-east-1.amazonaws.com/alpha",
-    userUrl: "http://localhost:5173",
+    userUrl: "http://localhost:5173", // 👈 use 5173 for dev (`npm run dev`)
     adminUrl: "http://localhost:3000",
   },
   alpha: {
@@ -39,15 +43,17 @@ const configData: ConfigSchema = {
   },
 };
 
+// 🧠 Read from `VITE_STAGE_NAME` (fallback to 'local')
 const rawStage =
-  typeof import.meta !== "undefined" && import.meta.env?.VITE_STAGE_NAME
-    ? import.meta.env.VITE_STAGE_NAME
-    : process.env.VITE_STAGE_NAME || "local";
+  (typeof import.meta !== "undefined" && import.meta.env?.VITE_STAGE_NAME) ||
+  process.env.VITE_STAGE_NAME ||
+  "local";
 
 const stage = rawStage as StageName;
 
-if (!stage || !(stage in configData)) {
-  throw new Error(`❌ Invalid or missing VITE_STAGE_NAME: ${stage}`);
+if (!(stage in configData)) {
+  throw new Error(`❌ Invalid VITE_STAGE_NAME: ${stage}`);
 }
 
+// ✅ Export config based on environment
 export const EnvConfig = configData[stage];
