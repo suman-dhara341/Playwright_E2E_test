@@ -95,7 +95,7 @@
 - paragraph: received recognition
 - paragraph: from
 - paragraph: Sanjoy Dikshit
-- paragraph: 52m ago
+- paragraph: 1h ago
 - img
 - paragraph: Best Quality
 - img
@@ -137,12 +137,12 @@
     - text: S
     - img
     - paragraph: You gave a recognition to Souvik Roy
-    - paragraph: 52m ago
+    - paragraph: 1h ago
   - listitem:
     - text: S
     - img
     - paragraph: You commented on SK Pal feed.
-    - paragraph: 52m ago
+    - paragraph: 1h ago
   - listitem:
     - text: S
     - img
