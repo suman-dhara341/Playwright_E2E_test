@@ -8,6 +8,10 @@ export default defineConfig({
   testDir: "./tests",
   timeout: 80000,
   retries: 0,
+  reporter: [
+    ["list"],
+    ["json", { outputFile: "test-results/results.json" }], // 👈 Add this line
+  ],
   use: {
     baseURL: EnvConfig.userUrl,
     headless: true,
