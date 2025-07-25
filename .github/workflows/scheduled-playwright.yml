@@ -26,8 +26,6 @@ jobs:
 
       - name: Run Playwright Tests
         run: npx playwright test
-        env:
-          VITE_STAGE_NAME: alpha
 
       - name: Send Slack Notification
         if: always()

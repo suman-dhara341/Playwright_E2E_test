@@ -123,15 +123,9 @@ const BadgeDescription: React.FC = () => {
         tourRef.current = null;
       }
     };
-  }, [
-    allBadgesListIsLoading,
-    badgeDescriptionIsLoading
-  ]);
+  }, [allBadgesListIsLoading, badgeDescriptionIsLoading]);
 
-  if (
-    allBadgesListIsLoading ||
-    badgeDescriptionIsLoading
-  ) {
+  if (allBadgesListIsLoading || badgeDescriptionIsLoading) {
     return <BadgeDescriptionShimmer />;
   }
 
@@ -158,7 +152,10 @@ const BadgeDescription: React.FC = () => {
         style={{ boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 4px" }}
       >
         <div className="max-w-3xl">
-          <h4 className="text-2xl !font-semibold !text-[#585DF9] mb-[8px]">
+          <h4
+            className="text-2xl !font-semibold !text-[#585DF9] mb-[8px]"
+            id="badge_name"
+          >
             {badgeDescription?.data.name}
           </h4>
           <p className="text-base">{badgeDescription?.data?.description}</p>
