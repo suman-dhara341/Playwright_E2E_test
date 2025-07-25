@@ -32,9 +32,10 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright Tests against Alpha Environment
-        run: npx playwright test
+        run: npx playwright test --config=playwright.ci.config.ts
         env:
           STAGE_NAME: alpha
+          CI: true
 
       - name: Send Slack Notification
         if: always()

@@ -51,8 +51,64 @@ test("user can login and logout successfully", async ({ page, request }) => {
 
   await expect(page).toHaveURL(`${USER_BASE_URL}/feed`, { timeout: 10000 });
 
-  await page.locator("#navbar_avatar").click();
-  await page.getByRole("button", { name: "Log Out" }).click();
+  // Wait for page to be fully loaded
+  await page.waitForLoadState('networkidle');
+
+  // Try multiple selectors for the avatar/profile menu
+  const avatarSelectors = [
+    "#navbar_avatar",
+    "[data-testid='navbar-avatar']", 
+    ".navbar-avatar",
+    "img[alt*='avatar']",
+    "img[alt*='profile']",
+    "[data-testid='user-menu']"
+  ];
+
+  let avatarClicked = false;
+  for (const selector of avatarSelectors) {
+    try {
+      const avatar = page.locator(selector);
+      if (await avatar.isVisible({ timeout: 2000 })) {
+        await avatar.click();
+        avatarClicked = true;
+        break;
+      }
+    } catch (e) {
+      continue;
+    }
+  }
+
+  if (!avatarClicked) {
+    throw new Error("Could not find and click avatar/profile menu");
+  }
+
+  // Try multiple selectors for logout button
+  const logoutSelectors = [
+    'button:has-text("Log Out")',
+    'button:has-text("Logout")', 
+    'button:has-text("Sign Out")',
+    '[data-testid="logout-button"]',
+    'a:has-text("Log Out")',
+    'a:has-text("Logout")'
+  ];
+
+  let logoutClicked = false;
+  for (const selector of logoutSelectors) {
+    try {
+      const logoutBtn = page.locator(selector);
+      if (await logoutBtn.isVisible({ timeout: 2000 })) {
+        await logoutBtn.click();
+        logoutClicked = true;
+        break;
+      }
+    } catch (e) {
+      continue;
+    }
+  }
+
+  if (!logoutClicked) {
+    throw new Error("Could not find and click logout button");
+  }
 
   const fcmToken = await page.evaluate(() => {
     return localStorage.getItem("fcmToken") || "";

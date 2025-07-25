@@ -15,9 +15,7 @@ test("Feed page", async ({ page, request }) => {
   // --- Input validation ---
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const isPasswordValid =
-    password.length >= 8 &&
-    /[A-Z]/.test(password) &&
-    /\d/.test(password);
+    password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password);
 
   if (!isEmailValid || !isPasswordValid) {
     console.error(`Input validation failed. Email: ${email}`);
@@ -242,10 +240,17 @@ test("Feed page", async ({ page, request }) => {
       }
     }
   } catch (err) {
-    await page.screenshot({
-      path: `test-results/feed-unexpected-error-${Date.now()}.png`,
-      fullPage: true,
-    });
+    try {
+      // Only take screenshot if page is still available
+      if (page && !page.isClosed()) {
+        await page.screenshot({
+          path: `test-results/feed-unexpected-error-${Date.now()}.png`,
+          fullPage: true,
+        });
+      }
+    } catch (screenshotErr) {
+      console.warn("Could not take error screenshot:", screenshotErr);
+    }
     console.error("Test failed with error:", err);
     throw err;
   }
