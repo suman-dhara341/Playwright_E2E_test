@@ -1,11 +1,11 @@
 import { test, expect } from "@playwright/test";
-import { EnvConfigPlaywright } from "../envConfig";
+import { EnvConfigPlaywright, testCredentials } from "../envConfig";
 
 test("user can login successfully", async ({ page, request }) => {
   const API_BASE_URL = EnvConfigPlaywright.apiUrl;
   const USER_BASE_URL = EnvConfigPlaywright.userUrl;
-  const email = process.env.TEST_USER_EMAIL ?? "";
-  const password = process.env.TEST_USER_PASSWORD ?? "";
+  const email = testCredentials.email;
+  const password = testCredentials.password;
 
   await page.goto(`${USER_BASE_URL}/login`);
   await page.fill('input[name="email"]', email);

@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { EnvConfigPlaywright } from "../envConfig";
+import { EnvConfigPlaywright, testCredentials } from "../envConfig";
 
 test("Feed page", async ({ page, request }) => {
   await page.addInitScript(() => {
@@ -9,13 +9,12 @@ test("Feed page", async ({ page, request }) => {
 
   const API_BASE_URL = EnvConfigPlaywright.apiUrl;
   const USER_BASE_URL = EnvConfigPlaywright.userUrl;
-  const email = process.env.TEST_USER_EMAIL;
-  const password = process.env.TEST_USER_PASSWORD;
+  const email = testCredentials.email;
+  const password = testCredentials.password;
 
   // --- Input validation ---
-  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email ?? "");
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const isPasswordValid =
-    typeof password === "string" &&
     password.length >= 8 &&
     /[A-Z]/.test(password) &&
     /\d/.test(password);

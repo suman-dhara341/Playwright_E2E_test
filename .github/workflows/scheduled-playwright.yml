@@ -23,37 +23,18 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "STAGE_NAME=local" >> .env
-          echo "VITE_STAGE_NAME=local" >> .env
+          echo "STAGE_NAME=alpha" >> .env
+          echo "VITE_STAGE_NAME=alpha" >> .env
           echo "TEST_USER_EMAIL=sumand3421@gmail.com" >> .env
           echo "TEST_USER_PASSWORD=Sum@n123" >> .env
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Install start-server-and-test for CI reliability  
-        run: npm install --save-dev start-server-and-test
-
-      - name: Start Development Server in Background
-        run: npm run dev &
-        env:
-          CI: true
-
-      - name: Give server time to start
-        run: sleep 10
-
-      - name: Check if server is running
-        run: |
-          echo "Checking running processes..."
-          ps aux | grep node || true
-          echo "Checking if port 5173 is in use..."
-          netstat -tlnp | grep :5173 || lsof -i :5173 || true
-
-      - name: Wait for Server to be Ready with extended timeout
-        run: npx wait-on http://127.0.0.1:5173 http://localhost:5173 --timeout 120000 --interval 2000 --verbose
-
-      - name: Run Playwright Tests
+      - name: Run Playwright Tests against Alpha Environment
         run: npx playwright test
+        env:
+          STAGE_NAME: alpha
 
       - name: Send Slack Notification
         if: always()

@@ -29,6 +29,12 @@ const configData: ConfigSchema = {
   },
 };
 
-const stage = (process.env.STAGE_NAME || process.env.VITE_STAGE_NAME as StageName) || "local";
+const stage = ((process.env.STAGE_NAME || process.env.VITE_STAGE_NAME) as StageName) || "local";
 
 export const EnvConfigPlaywright = configData[stage];
+
+// Export test credentials for easier access
+export const testCredentials = {
+  email: process.env.TEST_USER_EMAIL || "sumand3421@gmail.com",
+  password: process.env.TEST_USER_PASSWORD || "Sum@n123",
+};
