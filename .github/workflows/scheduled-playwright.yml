@@ -1,9 +1,31 @@
-      - name: Generate Slack message from test results
-        if: always()
-        run: |
-          node generate-slack-report.js
-          echo "Generated Slack Summary:"
-          cat slack-summary.txt
+name: Scheduled Playwright Tests
+
+on:
+  schedule:
+    - cron: "0 3,15 * * *" # 8:30 AM & 8:30 PM IST
+  workflow_dispatch:
+
+jobs:
+  run-playwright-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Tests
+        run: npx playwright test
 
       - name: Send Slack Notification
         if: always()
@@ -17,5 +39,3 @@
             🔁 *Commit:* ${{ github.sha }}
             📦 *Repo:* ${{ github.repository }}
             🔗 <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
-
-            $(cat slack-summary.txt)
