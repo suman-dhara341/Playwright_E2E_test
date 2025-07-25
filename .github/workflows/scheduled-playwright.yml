@@ -34,19 +34,10 @@ jobs:
           echo "Generated Slack Summary:"
           cat slack-summary.txt
 
-      - name: Set Slack Color
-        if: always()
-        run: |
-          if [ "${{ job.status }}" == "success" ]; then
-            echo "SLACK_COLOR=good" >> $GITHUB_ENV
-          else
-            echo "SLACK_COLOR=danger" >> $GITHUB_ENV
-          fi
-
       - name: Send Slack Notification
         if: always()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_COLOR: ${{ env.SLACK_COLOR }}
+          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
           SLACK_MESSAGE_FILE: slack-summary.txt
