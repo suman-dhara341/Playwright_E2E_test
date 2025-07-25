@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📦 Checkout code
+      - name: 📦 Checkout Code
         uses: actions/checkout@v3
 
       - name: ⚙️ Setup Node.js
@@ -20,15 +20,20 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Install dependencies
+      - name: 📥 Install Dependencies
         run: npm ci
 
       - name: 🌐 Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: 🚀 Start Vite Frontend Server
+        run: |
+          npm run dev &
+          npx wait-on http://localhost:5173
+
       - name: 🧪 Run Playwright Tests
         env:
-          USER_URL: ${{ secrets.USER_URL }} # if EnvConfig.userUrl comes from .env
+          USER_URL: http://localhost:5173
         run: npm run test:e2e
 
       - name: 📤 Upload HTML Report
@@ -51,12 +56,13 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: good
-          SLACK_TITLE: "✅ Playwright Tests Passed"
+          SLACK_TITLE: ":white_check_mark: Playwright Tests Passed"
           SLACK_MESSAGE: |
-            🎉 All tests passed!
-            Repo: ${{ github.repository }}
-            Branch: ${{ github.ref_name }}
-            Commit: ${{ github.sha }}
+            :trophy: *Playwright Tests Result:* `success`
+            :test_tube: *Workflow:* ${{ github.workflow }}
+            :repeat: *Commit:* `${{ github.sha }}`
+            :package: *Repo:* ${{ github.repository }}
+            :link: *Actions URL:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: ❌ Slack Notification (Failure)
         if: failure()
@@ -64,10 +70,10 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: danger
-          SLACK_TITLE: "❌ Playwright Tests Failed"
+          SLACK_TITLE: ":x: Playwright Tests Failed"
           SLACK_MESSAGE: |
-            🚨 Test failures occurred.
-            Repo: ${{ github.repository }}
-            Branch: ${{ github.ref_name }}
-            Commit: ${{ github.sha }}
-            Please check the uploaded report and JSON results.
+            :bangbang: *Playwright Tests Result:* `failure`
+            :test_tube: *Workflow:* ${{ github.workflow }}
+            :repeat: *Commit:* `${{ github.sha }}`
+            :package: *Repo:* ${{ github.repository }}
+            :link: *Actions URL:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
