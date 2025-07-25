@@ -24,6 +24,13 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Start Application Server
+        run: npm run dev &
+        # Optionally add environment variables for your app
+
+      - name: Wait for Application Server
+        run: npx wait-on http://localhost:5173/login
+
       - name: Run Playwright Tests
         run: npx playwright test
 
