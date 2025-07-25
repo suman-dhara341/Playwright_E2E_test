@@ -30,7 +30,7 @@ jobs:
       - name: Generate Slack message from test results
         if: always()
         run: |
-          node generate-slack-report.js
+          JOB_STATUS=${{ job.status }} node generate-slack-report.js
           echo "Generated Slack Summary:"
           cat slack-summary.txt
 
@@ -40,11 +40,4 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
-          SLACK_MESSAGE: |
-            *📣 Playwright Tests Result:* `${{ job.status }}`
-            🧪 *Workflow:* ${{ github.workflow }}
-            🔁 *Commit:* ${{ github.sha }}
-            📦 *Repo:* ${{ github.repository }}
-            🔗 <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Run Logs>
-
-            $(cat slack-summary.txt)
+          SLACK_MESSAGE_FILE: slack-summary.txt

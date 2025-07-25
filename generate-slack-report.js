@@ -1,7 +1,16 @@
 const fs = require("fs");
 
+const status = process.env.JOB_STATUS || "unknown";
+
+let message = `*📣 Playwright Tests Result:* \`${status}\`\n`;
+message += `🧪 *Workflow:* Scheduled Playwright Tests\n`;
+message += `🔁 *Commit:* ${process.env.GITHUB_SHA}\n`;
+message += `📦 *Repo:* ${process.env.GITHUB_REPOSITORY}\n`;
+message += `🔗 <https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}|View Run Logs>\n\n`;
+
 try {
-  const json = fs.readFileSync("test-results/results.json", "utf8");
+  const resultsPath = "./playwright-report/test-results.json"; // adjust if needed
+  const json = fs.readFileSync(resultsPath, "utf8");
   const data = JSON.parse(json);
 
   const failedTests = [];
@@ -16,12 +25,11 @@ try {
     });
   });
 
-  const message = failedTests.length
+  message += failedTests.length
     ? `❌ *Failed Tests:*\n${failedTests.join("\n")}`
     : "✅ All tests passed!";
-
-  fs.writeFileSync("slack-summary.txt", message);
 } catch (err) {
-  console.error("Failed to generate Slack summary:", err);
-  fs.writeFileSync("slack-summary.txt", "⚠️ Could not parse test results.");
+  message += "⚠️ Could not parse test results.";
 }
+
+fs.writeFileSync("slack-summary.txt", message);
